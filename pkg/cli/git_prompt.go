@@ -12,5 +12,9 @@ func GitPrompt() string {
 	b := breakingChange()
 	m := commitShortMsg()
 
+	if s == "" {
+		return fmt.Sprintf("%s%s: %s", t, b, m)
+	}
+
 	return fmt.Sprintf("%s(%s)%s: %s", t, s, b, m)
 }
