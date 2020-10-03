@@ -1,0 +1,15 @@
+language: go
+
+service:
+  - docker
+
+go:
+  - 1.x
+before_script:
+    - go mod download
+    - go get golang.org/x/tools/cmd/cover
+    - go get github.com/mattn/goveralls
+
+script:
+    - go test ./... -v -covermode=count -coverprofile=coverage.out
+    - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_SECRET
