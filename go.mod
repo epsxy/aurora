@@ -1,4 +1,4 @@
-module github.com/epsxy/gomitizen
+module github.com/epsxy/gommitizen
 
 go 1.15
 

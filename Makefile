@@ -2,4 +2,4 @@ run:
 	go run main.go
 
 build:
-	go build -o ./bin/gomitizen main.go 
+	go build -o ./bin/gommitizen main.go
