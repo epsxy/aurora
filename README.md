@@ -1,6 +1,6 @@
 # gommitizen
 
-A simple cross platform git commit CLI. Inspired from [commitizen](https://github.com/commitizen/cz-cli).
+A simple cross platform git commit CLI. Inspired from [commitizen](https://github.com/commitizen/cz-cli) and using the amazing [promptui](https://github.com/manifoldco/promptui) library.
 
 This tool aims to quickly creates commits that follow the [conventional commits](https://www.conventionalcommits.org) spec. It currently supports just a simple part of the spec: generating commit messages of the form:
 
@@ -30,6 +30,7 @@ ci: add an e2e tests step
 - [ ] Release v1.0
 - [ ] Add cross platform builds to releases
 - [ ] Add installation and usage documentation
+- [ ] BUG(promptui): MacOS ring bell triggers in multi select prompt
 
 # Quickstart
 
@@ -40,6 +41,42 @@ make build
 # run
 make run
 ```
+
+# Installation
+
+## From source
+
+You need Go installed on your computer.
+
+- Make your your `$GOPATH` and `$PATH` env variables are set up. You can type the following command in your terminal, or add them in your bash configuration file (`.bashrc`, `.zshrc`, etc) if you want this configuration to persist after you close your terminal:
+```bash
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+```
+- Build and install the project binary. This will add the generated executable in $GOPATH/bin:
+```bash
+go install
+```
+
+- You should be ready to go now, the following command should work in your terminal:
+```bash
+gommitizen
+```
+
+Troubleshooting:
+- Verify your environment variables have been correctly set up: `echo $GOPATH`, `echo $PATH`.
+- Open and close a new terminal to apply the changes you made to your shell configuration file. Or source it using `source ~/.bashrc`.
+- Verify the binary has been correctly generated in your `GOPATH/bin` directory: `ls $GOPATH/bin`.
+
+## From binary
+
+TODO.
+
+# Usage
+
+You have to be in a git repository, otherwise gommitizen will return and error and close itself. You have to git add the files **before** launching gommitizen. Type `gommitizen` in a shell at your repository's path and follow the indications to proceed in formatting your commit message.
+
+Gommitizen will basically `git commit -m [message]` with a nicely formatted message you will create using the CLI.
 
 # Configuration file
 
