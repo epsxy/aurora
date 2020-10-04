@@ -1,0 +1,12 @@
+types:
+    - feat
+    - fix
+    - chore
+    - docs
+    - refactor
+    - ci
+scopes:
+    - 
+    - cli
+    - cmd
+    - parser
