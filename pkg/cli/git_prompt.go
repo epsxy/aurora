@@ -2,13 +2,22 @@ package cli
 
 import (
 	"fmt"
+
+	"github.com/epsxy/gommitizen/pkg/parser"
 )
+
+type commitsConf struct {
+	Types  []string `yaml:"types,flow"`
+	Scopes []string `yaml:"scopes,flow"`
+}
 
 // GitPrompt : Global entrypoint
 func GitPrompt() string {
 
-	t := commitType()
-	s := commitScope()
+	conf := parser.EnvFileParser()
+
+	t := commitType(conf.Types)
+	s := commitScope(conf.Scopes)
 	b := breakingChange()
 	m := commitShortMsg()
 

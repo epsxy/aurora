@@ -6,15 +6,28 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-func commitType() string {
+func commitType(conf []string) string {
 	label := "Commit type"
-	types := []string{"feat", "fix", "build", "chore", "ci", "docs", "style", "refactor", "perf", "test"}
+
+	if conf == nil {
+		conf = []string{
+			"feat",
+			"fix",
+			"build",
+			"chore",
+			"ci",
+			"docs",
+			"style",
+			"refactor",
+			"perf",
+			"test",
+		}
+	}
 
 	prompt := promptui.Select{
 		Label: label,
-		Items: types,
+		Items: conf,
 	}
-
 	_, res, err := prompt.Run()
 
 	if err != nil {
