@@ -8,7 +8,7 @@ import (
 )
 
 func validateMsgLength(input string) error {
-	if len(input) > 90 {
+	if len(input) > 72 {
 		return errors.New("String length should not be > 90")
 	}
 	return nil
