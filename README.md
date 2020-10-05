@@ -1,6 +1,6 @@
 # gommitizen
 
-![logo](logo.svg)
+![logo](logo.png)
 
 A simple cross platform git commit CLI. Inspired from [commitizen](https://github.com/commitizen/cz-cli) and using the amazing [promptui](https://github.com/manifoldco/promptui) library.
 
