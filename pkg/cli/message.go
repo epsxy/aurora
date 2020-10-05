@@ -9,7 +9,7 @@ import (
 
 func validateMsgLength(input string) error {
 	if len(input) > 72 {
-		return errors.New("String length should not be > 90")
+		return errors.New("String length should not be > 72")
 	}
 	return nil
 }
