@@ -1,1 +1,9 @@
 /bin/gommitizen
+.DS_Store
+**/.DS_Store
+/bin/linux-amd64
+/bin/darwin-amd64
+/bin/freebsd-amd64
+/bin/windows-amd64
+
+/release/*.tar.gz
