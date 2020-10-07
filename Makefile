@@ -6,6 +6,10 @@ run:
 build:
 	go build -o ./bin/gommitizen main.go
 
+install:
+	go build -o ./bin/gommitizen main.go
+	sudo cp ./bin/gommitizen /usr/local/bin/gommitizen
+
 build-linux-amd64:
 	GOOS=linux GOARCH=amd64 go build -o bin/linux-amd64 main.go &
 
