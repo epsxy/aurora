@@ -3,6 +3,8 @@ package cli
 import (
 	"fmt"
 
+	"github.com/epsxy/gommitizen/pkg/cmd"
+
 	"github.com/epsxy/gommitizen/pkg/parser"
 )
 
@@ -13,6 +15,11 @@ type commitsConf struct {
 
 // GitPrompt : Global entrypoint
 func GitPrompt() string {
+
+	if cmd.AreChangesAddedToBeCommited() == false {
+		fmt.Println("No file staged for commit")
+		stageAll()
+	}
 
 	conf := parser.EnvFileParser()
 
