@@ -31,10 +31,13 @@ ci: add an e2e tests step
 - [x] Add .env file to customize params
 - [ ] Support more custom params (commit length, etc)
 - [ ] Add tests
-- [ ] Release v1.0
+- [x] Release v1.0
 - [ ] Add cross platform builds to releases
-- [ ] Add installation and usage documentation
+- [x] Add installation and usage documentation
 - [ ] BUG(promptui): MacOS ring bell triggers in multi select prompt
+- [ ] Propose to `git add -A` if running gommitizen without any file added
+- [ ] Generate Changelog
+- [ ] Commit validation (prehook)
 
 # Quickstart
 
