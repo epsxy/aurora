@@ -1,11 +1,7 @@
 package main
 
-import (
-	"github.com/epsxy/gommitizen/pkg/cli"
-	cmd "github.com/epsxy/gommitizen/pkg/git"
-)
+import "github.com/epsxy/gommitizen/pkg/cmd"
 
 func main() {
-	s := cli.GitPrompt()
-	cmd.GitCommit(s)
+	cmd.Execute()
 }
