@@ -3,10 +3,10 @@ package parser
 import (
 	"io/ioutil"
 	"log"
-	"os/exec"
 	"path/filepath"
 	"strings"
 
+	"github.com/epsxy/gommitizen/pkg/cmd"
 	"gopkg.in/yaml.v2"
 )
 
@@ -17,13 +17,8 @@ type GommitizenConf struct {
 }
 
 func parseEnvFilePath() string {
-	cmd := exec.Command("git", "rev-parse", "--show-toplevel")
-	out, err := cmd.Output()
-
-	if err != nil {
-		log.Fatal("Unable to retrieve repository path.\nAre you in a git repository?\nAborting...")
-	}
-	return strings.Replace(string(out), "\n", "", 1)
+	path := cmd.ShowTopLevel()
+	return strings.Replace(path, "\n", "", 1)
 }
 
 //EnvFileParser : parse gommitizen env file
