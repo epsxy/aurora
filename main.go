@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/epsxy/gommitizen/pkg/cli"
-	"github.com/epsxy/gommitizen/pkg/cmd"
+	cmd "github.com/epsxy/gommitizen/pkg/git"
 )
 
 func main() {

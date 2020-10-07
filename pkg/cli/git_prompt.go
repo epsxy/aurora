@@ -3,7 +3,7 @@ package cli
 import (
 	"fmt"
 
-	"github.com/epsxy/gommitizen/pkg/cmd"
+	"github.com/epsxy/gommitizen/pkg/git"
 
 	"github.com/epsxy/gommitizen/pkg/parser"
 )
@@ -16,7 +16,7 @@ type commitsConf struct {
 // GitPrompt : Global entrypoint
 func GitPrompt() string {
 
-	if cmd.AreChangesAddedToBeCommited() == false {
+	if git.AreChangesAddedToBeCommited() == false {
 		fmt.Println("No file staged for commit")
 		stageAll()
 	}

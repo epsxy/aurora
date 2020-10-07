@@ -3,8 +3,7 @@ package cli
 import (
 	"log"
 
-	"github.com/epsxy/gommitizen/pkg/cmd"
-
+	"github.com/epsxy/gommitizen/pkg/git"
 	"github.com/manifoldco/promptui"
 )
 
@@ -24,7 +23,7 @@ func stageAll() {
 	}
 
 	if res == "Yes" {
-		cmd.GitAddAll()
+		git.GitAddAll()
 	} else {
 		log.Fatal("Staging no file. Aborted.")
 	}

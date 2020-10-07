@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/epsxy/gommitizen/pkg/cmd"
+	"github.com/epsxy/gommitizen/pkg/git"
 	"gopkg.in/yaml.v2"
 )
 
@@ -17,7 +17,7 @@ type GommitizenConf struct {
 }
 
 func parseEnvFilePath() string {
-	path := cmd.ShowTopLevel()
+	path := git.ShowTopLevel()
 	return strings.Replace(path, "\n", "", 1)
 }
 
