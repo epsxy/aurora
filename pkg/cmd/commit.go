@@ -2,16 +2,18 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"os/exec"
 )
 
-// GitCommit : Exec git commit command
+// GitCommit runs `git commit -m` command.
+// Exits if it fails.
 func GitCommit(m string) {
 	cmd := exec.Command("git", "commit", "-m", m)
 	out, err := cmd.Output()
 
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	fmt.Printf("%s", out)
