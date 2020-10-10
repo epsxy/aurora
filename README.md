@@ -1,4 +1,5 @@
 # gommitizen
+![go report card](https://goreportcard.com/badge/github.com/epsxy/gommitizen)
 
 ![logo](logo.png)
 
@@ -29,15 +30,16 @@ ci: add an e2e tests step
 
 - [x] Create commit messages with default params
 - [x] Add .env file to customize params
+- [x] Release v1.0
+- [x] Add installation and usage documentation
+- [x] Propose to `git add -A` if running gommitizen without any file added
 - [ ] Support more custom params (commit length, etc)
 - [ ] Add tests
-- [x] Release v1.0
 - [ ] Add cross platform builds to releases
-- [x] Add installation and usage documentation
+- [ ] Add generate changelog command
+- [ ] Add commit validation command
+- [ ] Gobinaries installation (?).
 - [ ] BUG(promptui): MacOS ring bell triggers in multi select prompt
-- [ ] Propose to `git add -A` if running gommitizen without any file added
-- [ ] Generate Changelog
-- [ ] Commit validation (prehook)
 
 # Quickstart
 
