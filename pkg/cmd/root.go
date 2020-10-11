@@ -15,7 +15,7 @@ var root = &cobra.Command{
 
 // Execute is the root entrypoint of the Cobra CLI
 func Execute() {
-	root.AddCommand(Commit, Changelog)
+	root.AddCommand(Commit, Changelog, Lint)
 	if err := root.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
