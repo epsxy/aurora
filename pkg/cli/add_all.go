@@ -23,7 +23,7 @@ func stageAll() {
 	}
 
 	if res == "Yes" {
-		git.GitAddAll()
+		git.AddAll()
 	} else {
 		log.Fatal("Staging no file. Aborted.")
 	}

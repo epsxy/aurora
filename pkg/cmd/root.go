@@ -22,7 +22,7 @@ var commit = &cobra.Command{
 	Long:  "Create a commit following conventional commits convention",
 	Run: func(cmd *cobra.Command, args []string) {
 		message := cli.GitPrompt()
-		git.GitCommit(message)
+		git.CreateCommit(message)
 	},
 }
 

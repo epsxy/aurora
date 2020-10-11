@@ -17,9 +17,9 @@ type Commit struct {
 	Msg              string
 }
 
-// GitCommit runs `git commit -m` command.
+// CreateCommit runs `git commit -m` command.
 // Exits if it fails.
-func GitCommit(m string) {
+func CreateCommit(m string) {
 	cmd := exec.Command("git", "commit", "-m", m)
 	out, err := cmd.Output()
 
