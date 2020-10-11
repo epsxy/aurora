@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
+	"regexp"
 	"strings"
 )
 
@@ -28,6 +29,14 @@ func CreateCommit(m string) {
 	}
 
 	fmt.Printf("%s", out)
+}
+
+//LintCommitMessage check if a message respect the conventional commit convention
+// TODO: apply .env file
+func LintCommitMessage(m string) bool {
+	r := "^(revert: )?(feat|fix|docs|style|refactor|perf|test|chore)(\\(.+\\))?(\\!)?: .{1,72}"
+	isMatching, _ := regexp.MatchString(r, m)
+	return isMatching
 }
 
 //IsMergeCommit checks if a commit is a merge commit
