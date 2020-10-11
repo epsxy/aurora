@@ -34,7 +34,7 @@ func CreateCommit(m string) {
 //LintCommitMessage check if a message respect the conventional commit convention
 // TODO: apply .env file
 func LintCommitMessage(m string) bool {
-	r := "^(revert: )?(feat|fix|docs|style|refactor|perf|test|chore)(\\(.+\\))?(\\!)?: .{1,72}"
+	r := "^(revert: )?(feat|fix|docs|style|refactor|perf|test|chore|ci)(\\(.+\\))?(\\!)?: .{1,72}"
 	isMatching, _ := regexp.MatchString(r, m)
 	return isMatching
 }
