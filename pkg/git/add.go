@@ -5,9 +5,9 @@ import (
 	"os/exec"
 )
 
-// GitAddAll runs `git add -A` command.
+// AddAll runs `git add -A` command.
 // Exits if it fails.
-func GitAddAll() {
+func AddAll() {
 	cmd := exec.Command("git", "add", "-A")
 	_, err := cmd.Output()
 

@@ -9,6 +9,8 @@ build:
 install:
 	go build -o ./bin/gommitizen main.go
 	sudo cp ./bin/gommitizen /usr/local/bin/gommitizen
+	sudo cp ./release/git-gz /usr/local/bin/git-gz
+	sudo chmod +x /usr/local/bin/git-gz
 
 build-linux-amd64:
 	GOOS=linux GOARCH=amd64 go build -o bin/linux-amd64 main.go &
