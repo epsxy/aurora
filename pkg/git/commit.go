@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
+	"regexp"
 	"strings"
 )
 
@@ -30,6 +31,20 @@ func CreateCommit(m string) {
 	fmt.Printf("%s", out)
 }
 
+//LintCommitMessage check if a message respect the conventional commit convention
+// TODO: apply .env file
+func LintCommitMessage(m string) bool {
+	r := "^(revert: )?(feat|fix|docs|style|refactor|perf|test|chore|ci)(\\(.+\\))?(\\!)?: .{1,72}"
+	isMatching, _ := regexp.MatchString(r, m)
+	return isMatching
+}
+
+//IsMergeCommit checks if a commit is a merge commit
+// FIXME: Dirty fix to identify default merge commits
+func IsMergeCommit(m string) bool {
+	return strings.Contains(m, "Merge pull request")
+}
+
 //FillFromStrMsg fill commit information from a string inside a git.Commit object
 func (c *Commit) FillFromStrMsg(m string) {
 	cType := ""
@@ -37,8 +52,7 @@ func (c *Commit) FillFromStrMsg(m string) {
 	isBreakingChange := false
 	msg := ""
 
-	// FIXME: Dirty fix to identify default merge commits
-	if strings.Contains(m, "Merge pull request") {
+	if IsMergeCommit(m) {
 		(*c).Type = ""
 		(*c).Scope = ""
 		(*c).IsBreakingChange = false

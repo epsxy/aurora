@@ -21,6 +21,40 @@ func Log() string {
 	return string(out)
 }
 
+//LogShortHash returns commit short hashes list between 2 revisions
+func LogShortHash(rev1 string, rev2 string) []string {
+	if rev1 == "" {
+		rev1 = "HEAD"
+	}
+	opts := fmt.Sprintf("%s...%s", rev1, rev2)
+	cmd := exec.Command("git", "log", "--oneline", "--first-parent", "--pretty=format:%h", opts)
+
+	out, err := cmd.Output()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return strings.Split(string(out), "\n")
+}
+
+//LogCommitMessage returns commit message list between 2 revisions
+func LogCommitMessage(rev1 string, rev2 string) []string {
+	if rev1 == "" {
+		rev1 = "HEAD"
+	}
+	opts := fmt.Sprintf("%s...%s", rev1, rev2)
+	cmd := exec.Command("git", "log", "--oneline", "--first-parent", "--pretty=format:%s", opts)
+
+	out, err := cmd.Output()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return strings.Split(string(out), "\n")
+}
+
 //LogChangelog runs `git log --oneline --first-parent [rev1]...[rev2]`.
 //It logs the commit history between 2 revisions.
 //If the first one is empty, defaults to `HEAD`

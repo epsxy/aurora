@@ -36,10 +36,10 @@ ci: add an e2e tests step
 - [ ] Support more custom params (commit length, etc)
 - [ ] Add tests
 - [ ] Add cross platform builds to releases
-- [ ] Add generate changelog command
+- [x] Add generate changelog command
 - [ ] Add commit validation command
-- [ ] Gobinaries installation (?).
-- [ ] BUG(promptui): MacOS ring bell triggers in multi select prompt
+- [x] Gobinaries installation
+- [x] BUG(promptui): MacOS ring bell triggers in multi select prompt
 
 # Quickstart
 
@@ -52,6 +52,35 @@ make run
 ```
 
 # Installation
+
+## From gobinaries
+
+You can install Gommitizen without using or installing go by downloading it from gobinaries.com.
+
+```
+curl -sf https://gobinaries.com/epsxy/gommitizen | sh
+```
+
+Typing `gommitizen` in a terminal should work now:
+
+```
+> gommitizen
+
+A Go program to help you create conventional commits
+
+Usage:
+  gommitizen [command]
+
+Available Commands:
+  changelog   Run changelog generator
+  commit      Run commit formatter
+  help        Help about any command
+
+Flags:
+  -h, --help   help for gommitizen
+
+Use "gommitizen [command] --help" for more information about a command.
+```
 
 ## From source
 
@@ -76,10 +105,6 @@ Troubleshooting:
 - Verify your environment variables have been correctly set up: `echo $GOPATH`, `echo $PATH`.
 - Open and close a new terminal to apply the changes you made to your shell configuration file. Or source it using `source ~/.bashrc`.
 - Verify the binary has been correctly generated in your `GOPATH/bin` directory: `ls $GOPATH/bin`.
-
-## From binary
-
-TODO.
 
 # Usage
 
