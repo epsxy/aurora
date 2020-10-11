@@ -30,6 +30,12 @@ func CreateCommit(m string) {
 	fmt.Printf("%s", out)
 }
 
+//IsMergeCommit checks if a commit is a merge commit
+// FIXME: Dirty fix to identify default merge commits
+func IsMergeCommit(m string) bool {
+	return strings.Contains(m, "Merge pull request")
+}
+
 //FillFromStrMsg fill commit information from a string inside a git.Commit object
 func (c *Commit) FillFromStrMsg(m string) {
 	cType := ""
@@ -37,8 +43,7 @@ func (c *Commit) FillFromStrMsg(m string) {
 	isBreakingChange := false
 	msg := ""
 
-	// FIXME: Dirty fix to identify default merge commits
-	if strings.Contains(m, "Merge pull request") {
+	if IsMergeCommit(m) {
 		(*c).Type = ""
 		(*c).Scope = ""
 		(*c).IsBreakingChange = false
