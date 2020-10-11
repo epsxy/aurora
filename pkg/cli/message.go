@@ -20,6 +20,7 @@ func commitShortMsg() string {
 	prompt := promptui.Prompt{
 		Label:    label,
 		Validate: validateMsgLength,
+		Stdout:   &BellSkipper{},
 	}
 
 	res, err := prompt.Run()
