@@ -11,8 +11,9 @@ func breakingChange() string {
 	types := []string{"No", "Yes"}
 
 	prompt := promptui.Select{
-		Label: label,
-		Items: types,
+		Label:  label,
+		Items:  types,
+		Stdout: &BellSkipper{},
 	}
 
 	_, res, err := prompt.Run()

@@ -25,8 +25,9 @@ func commitType(conf []string) string {
 	}
 
 	prompt := promptui.Select{
-		Label: label,
-		Items: conf,
+		Label:  label,
+		Items:  conf,
+		Stdout: &BellSkipper{},
 	}
 	_, res, err := prompt.Run()
 

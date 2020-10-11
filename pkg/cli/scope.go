@@ -11,8 +11,9 @@ func commitScope(conf []string) string {
 
 	if conf != nil {
 		prompt := promptui.Select{
-			Label: label,
-			Items: conf,
+			Label:  label,
+			Items:  conf,
+			Stdout: &BellSkipper{},
 		}
 		_, res, err := prompt.Run()
 
@@ -23,7 +24,8 @@ func commitScope(conf []string) string {
 	}
 
 	prompt := promptui.Prompt{
-		Label: label,
+		Label:  label,
+		Stdout: &BellSkipper{},
 	}
 
 	res, err := prompt.Run()
