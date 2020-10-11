@@ -50,7 +50,6 @@ func GenerateMarkdownChangelog(commits []git.Commit) string {
 }
 
 func parseMarkdownCommit(c git.Commit) string {
-	fmt.Println(c)
 	return fmt.Sprintf("- %s : %s", c.Hash, c.Msg)
 }
 
