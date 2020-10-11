@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
+	"strings"
 )
 
 // Log runs `git log --abrev-commit` command.
@@ -37,4 +38,22 @@ func LogChangelog(firstCommit string, secondCommit string) string {
 	}
 
 	return string(out)
+}
+
+//ParseLogOutput generate a list of git.Commit from a git log output
+func ParseLogOutput(log string) []Commit {
+	var c *Commit
+	logSplit := strings.Split(log, "\n")
+	res := make([]Commit, len(logSplit)-1)
+	for i, line := range logSplit[:len(logSplit)-1] {
+		split := strings.Split(line, " ")
+		h := split[0]
+		c = &Commit{
+			Hash: h,
+		}
+		m := strings.Join(split[1:], " ")
+		c.FillFromStrMsg(m)
+		res[i] = *c
+	}
+	return res
 }
