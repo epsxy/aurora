@@ -1,10 +1,10 @@
-package cli
+package prompt
 
 import (
 	"fmt"
 
+	"github.com/epsxy/gommitizen/pkg/cli"
 	"github.com/epsxy/gommitizen/pkg/git"
-
 	"github.com/epsxy/gommitizen/pkg/parser"
 )
 
@@ -13,20 +13,20 @@ type commitsConf struct {
 	Scopes []string `yaml:"scopes,flow"`
 }
 
-// GitPrompt : Global entrypoint
-func GitPrompt() string {
+// Commit : gommitizen commit prompt
+func Commit() string {
 
 	if git.AreChangesAddedToBeCommited() == false {
 		fmt.Println("No file staged for commit")
-		stageAll()
+		cli.StageAll()
 	}
 
 	conf := parser.EnvFileParser()
 
-	t := commitType(conf.Types)
-	s := commitScope(conf.Scopes)
-	b := breakingChange()
-	m := commitShortMsg()
+	t := cli.CommitType(conf.Types)
+	s := cli.CommitScope(conf.Scopes)
+	b := cli.BreakingChange()
+	m := cli.CommitShortMsg()
 
 	if s == "" {
 		return fmt.Sprintf("%s%s: %s", t, b, m)

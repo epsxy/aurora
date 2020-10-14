@@ -7,7 +7,8 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-func stageAll() {
+// StageAll displays a prompt to ask if the user wants to add all files
+func StageAll() {
 	label := "Stage all files"
 	types := []string{"Yes", "No"}
 

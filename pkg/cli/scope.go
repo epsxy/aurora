@@ -6,7 +6,10 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-func commitScope(conf []string) string {
+// CommitScope displays a prompt to select commit scope.
+// If scopes are prefined in the .gommitizen.yml conf file,
+// this input is replaced by a select component.
+func CommitScope(conf []string) string {
 	label := "Commit scope"
 
 	if conf != nil {

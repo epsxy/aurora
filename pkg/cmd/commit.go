@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/epsxy/gommitizen/pkg/cli"
 	"github.com/epsxy/gommitizen/pkg/git"
+	"github.com/epsxy/gommitizen/pkg/prompt"
 	"github.com/spf13/cobra"
 )
 
@@ -12,7 +12,7 @@ var Commit = &cobra.Command{
 	Short: "Run commit formatter",
 	Long:  "Create a commit following conventional commits convention",
 	Run: func(cmd *cobra.Command, args []string) {
-		message := cli.GitPrompt()
+		message := prompt.Commit()
 		git.CreateCommit(message)
 	},
 }

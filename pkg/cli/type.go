@@ -6,7 +6,8 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-func commitType(conf []string) string {
+// CommitType displays a prompt to select commit type
+func CommitType(conf []string) string {
 	label := "Commit type"
 
 	if conf == nil {

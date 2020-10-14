@@ -6,7 +6,9 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-func breakingChange() string {
+// BreakingChange displays a prompt to ask if current commit
+// introduces a breaking change or not
+func BreakingChange() string {
 	label := "BreakingChange"
 	types := []string{"No", "Yes"}
 

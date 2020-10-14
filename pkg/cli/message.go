@@ -14,7 +14,8 @@ func validateMsgLength(input string) error {
 	return nil
 }
 
-func commitShortMsg() string {
+// CommitShortMsg displays an input to type commit short message
+func CommitShortMsg() string {
 	label := "Commit short message"
 
 	prompt := promptui.Prompt{
