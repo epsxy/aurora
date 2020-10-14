@@ -1,5 +1,6 @@
 # gommitizen
 ![go report card](https://goreportcard.com/badge/github.com/epsxy/gommitizen)
+![ci](https://travis-ci.org/epsxy/gommitizen.svg?branch=master&status=passed)
 
 ![logo](logo.png)
 

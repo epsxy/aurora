@@ -42,7 +42,7 @@ func LintCommitMessage(m string) bool {
 //IsMergeCommit checks if a commit is a merge commit
 // FIXME: Dirty fix to identify default merge commits
 func IsMergeCommit(m string) bool {
-	return strings.Contains(m, "Merge pull request")
+	return strings.Contains(m, "Merge")
 }
 
 //FillFromStrMsg fill commit information from a string inside a git.Commit object
