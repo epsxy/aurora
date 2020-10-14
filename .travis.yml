@@ -9,7 +9,11 @@ before_script:
     - go mod download
     - go get golang.org/x/tools/cmd/cover
     - go get github.com/mattn/goveralls
+    - git fetch origin refs/heads/master:refs/heads/master
+    - if [ "$TRAVIS_PULL_REQUEST_BRANCH" ] ; then git checkout -b "$TRAVIS_PULL_REQUEST_BRANCH" ; fi
 
 script:
+    - make build
+    - ./bin/gommitizen lint master
     - go test ./... -v -covermode=count -coverprofile=coverage.out
     - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_SECRET
