@@ -6,13 +6,11 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-func breakingChange() string {
-	label := "BreakingChange"
-	types := []string{"No", "Yes"}
-
+// Select display a select promptui item
+func Select(label string, items []string) string {
 	prompt := promptui.Select{
 		Label:  label,
-		Items:  types,
+		Items:  items,
 		Stdout: &BellSkipper{},
 	}
 
@@ -21,9 +19,5 @@ func breakingChange() string {
 	if err != nil {
 		log.Fatal("Aborted")
 	}
-
-	if res == "Yes" {
-		return "!"
-	}
-	return ""
+	return res
 }
