@@ -4,6 +4,9 @@ title: Commit formatter
 sidebar_label: Commit formatter
 slug: /features/commit/formatter
 ---
+
+![Commit CLI gif](../static/img/gif/commit.gif)
+
 Gommitizen allows you to create commits respecting the conventional commits spec.
 
 ## Command
