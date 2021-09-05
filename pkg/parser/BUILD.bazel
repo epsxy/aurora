@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "parser",
+    srcs = [
+        "changelog.go",
+        "env.go",
+    ],
+    importpath = "github.com/epsxy/gommitizen/pkg/parser",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/git",
+        "@in_gopkg_yaml_v2//:go_default_library",
+    ],
+)

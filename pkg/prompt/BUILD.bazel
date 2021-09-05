@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "prompt",
+    srcs = [
+        "changelog.go",
+        "commit.go",
+        "linter.go",
+    ],
+    importpath = "github.com/epsxy/gommitizen/pkg/prompt",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/cli",
+        "//pkg/git",
+        "//pkg/parser",
+        "@com_github_gookit_color//:go_default_library",
+    ],
+)

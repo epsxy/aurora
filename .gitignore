@@ -7,3 +7,9 @@
 /bin/windows-amd64
 
 /release/*.tar.gz
+
+# Bazel
+bazel-bin
+bazel-out
+bazel-testlogs
+bazel-gommitizen
