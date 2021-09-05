@@ -13,6 +13,10 @@ func Lint(firstCommit string, secondCommit string) {
 	messages := git.LogCommitMessage(firstCommit, secondCommit)
 	successSymbol := "✔"
 	failSymbol := "✘"
+	if len(messages) == 0 {
+		color.Cyan.Println("Nothing to lint")
+		os.Exit(0)
+	}
 	for _, m := range messages {
 		if m != "" && !git.LintCommitMessage(m) {
 			if git.IsMergeCommit(m) {

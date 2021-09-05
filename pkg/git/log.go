@@ -51,7 +51,9 @@ func LogCommitMessage(rev1 string, rev2 string) []string {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	if len(out) == 0 {
+		return []string{}
+	}
 	return strings.Split(string(out), "\n")
 }
 
