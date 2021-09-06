@@ -1,4 +1,5 @@
 # gommitizen
+
 ![go report card](https://goreportcard.com/badge/github.com/epsxy/gommitizen)
 ![ci](https://travis-ci.org/epsxy/gommitizen.svg?branch=master&status=passed)
 
@@ -138,6 +139,14 @@ scopes:
 ```
 
 This file can be present, present partially, or absent. If the file or one of its option is missing, the default parameters will apply. This repository contains a `.gommitizen.yml` example file.
+
+# Bazel
+
+```
+bazel build //:gommitizen
+bazel run //:gommitizen
+
+```
 
 # Licence
 

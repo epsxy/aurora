@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "git",
+    srcs = [
+        "add.go",
+        "commit.go",
+        "log.go",
+        "status.go",
+        "top_level.go",
+    ],
+    importpath = "github.com/epsxy/gommitizen/pkg/git",
+    visibility = ["//visibility:public"],
+)

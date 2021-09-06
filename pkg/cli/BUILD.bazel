@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "cli",
+    srcs = [
+        "bell_skipper.go",
+        "binary_select.go",
+        "input.go",
+        "select.go",
+    ],
+    importpath = "github.com/epsxy/gommitizen/pkg/cli",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_manifoldco_promptui//:go_default_library"],
+)
