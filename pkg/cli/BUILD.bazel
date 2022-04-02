@@ -10,5 +10,5 @@ go_library(
     ],
     importpath = "github.com/epsxy/gommitizen/pkg/cli",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_manifoldco_promptui//:go_default_library"],
+    deps = ["@com_github_manifoldco_promptui//:promptui"],
 )
