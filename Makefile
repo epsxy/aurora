@@ -9,8 +9,17 @@ build:
 install:
 	go build -o ./bin/aurora main.go
 	sudo cp ./bin/aurora /usr/local/bin/aurora
-	sudo cp ./release/git-gz /usr/local/bin/git-gz
-	sudo chmod +x /usr/local/bin/git-gz
+
+uninstall:
+	sudo rm -rf /usr/local/bin/aurora
+
+install-git:
+	sudo cp ./release/git-aur /usr/local/bin/git-aur
+	sudo chmod +x /usr/local/bin/git-aur
+
+uninstall-git:
+	sudo cp ./release/git-aur /usr/local/bin/git-aur
+	sudo chmod +x /usr/local/bin/git-aur
 
 build-linux-amd64:
 	GOOS=linux GOARCH=amd64 go build -o bin/linux-amd64 main.go &
@@ -26,7 +35,7 @@ build-windows-amd64:
 
 release-darwin-amd64: build-darwin-amd64
 	mkdir -p release/darwin-amd64
-	cp release/git-gz release/darwin-amd64
+	cp release/git-aur release/darwin-amd64
 	cp release/Makefile release/darwin-amd64
 	cp release/README.md release/darwin-amd64
 	cp bin/darwin-amd64 release/darwin-amd64/aurora

@@ -1,8 +1,8 @@
 install:
 	cp aurora /usr/local/bin/aurora
-	cp git-gz /usr/local/bin/git-gz
-	chmod +x /usr/local/bin/git-gz
+	cp git-aur /usr/local/bin/git-aur
+	chmod +x /usr/local/bin/git-aur
 
 uninstall:
 	rm -rf /usr/local/bin/aurora
-	rm -rf /usr/local/bin/git-gz
+	rm -rf /usr/local/bin/git-aur

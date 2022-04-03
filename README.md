@@ -88,6 +88,25 @@ Use "aurora [command] --help" for more information about a command.
 
 ## From source
 
+### Using Makefile
+**Recommended**
+
+The following commands will:
+- clone the repository
+- build the program with `go build`
+- move the binary to `/usr/local/bin/aurora`
+
+```
+git clone git@github.com:epsxy/aurora.git
+cd aurora
+make install
+```
+
+To uninstall, use `make uninstall`.
+
+### Legacy (w/ go install)
+**Not recommended**
+
 You need Go installed on your computer.
 
 - Make your your `$GOPATH` and `$PATH` env variables are set up. You can type the following command in your terminal, or add them in your bash configuration file (`.bashrc`, `.zshrc`, etc) if you want this configuration to persist after you close your terminal:
@@ -147,7 +166,6 @@ This file can be present, present partially, or absent. If the file or one of it
 ```
 bazel build //:aurora
 bazel run //:aurora
-
 ```
 
 # Licence
