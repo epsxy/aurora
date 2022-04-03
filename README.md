@@ -1,5 +1,7 @@
 # aurora
 
+*Current status: I'm restarting to work on this project. It has been renamed to Aurora. For now, the docs might be not up-to-date, and it seems like the install through GoBinaries doesn't work anymore. I have a few new things to do, in order to finalize this software and release the v1.0.0, e.g. improving the docs, fixing the installation issues, generalising the use of Bazel and adding new features about commit length, config files, etc. Feel free to open any issue if you're interested or if something doesn't work.*
+
 ![go report card](https://goreportcard.com/badge/github.com/epsxy/aurora)
 ![ci](https://travis-ci.org/epsxy/aurora.svg?branch=master&status=passed)
 
