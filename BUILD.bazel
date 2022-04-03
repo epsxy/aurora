@@ -1,19 +1,19 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/epsxy/gommitizen
+# gazelle:prefix github.com/epsxy/aurora
 gazelle(name = "gazelle")
 
 go_library(
-    name = "gommitizen_lib",
+    name = "aurora_lib",
     srcs = ["main.go"],
-    importpath = "github.com/epsxy/gommitizen",
+    importpath = "github.com/epsxy/aurora",
     visibility = ["//visibility:private"],
     deps = ["//pkg/cmd"],
 )
 
 go_binary(
-    name = "gommitizen",
-    embed = [":gommitizen_lib"],
+    name = "aurora",
+    embed = [":aurora_lib"],
     visibility = ["//visibility:public"],
 )

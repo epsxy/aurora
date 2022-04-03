@@ -7,7 +7,12 @@ go_library(
         "commit.go",
         "linter.go",
     ],
-    importpath = "github.com/epsxy/gommitizen/pkg/prompt",
+    importpath = "github.com/epsxy/aurora/pkg/prompt",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_gookit_color//:color"],
+    deps = [
+        "//pkg/cli",
+        "//pkg/git",
+        "//pkg/parser",
+        "@com_github_gookit_color//:color",
+    ],
 )

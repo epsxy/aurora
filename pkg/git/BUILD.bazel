@@ -9,6 +9,6 @@ go_library(
         "status.go",
         "top_level.go",
     ],
-    importpath = "github.com/epsxy/gommitizen/pkg/git",
+    importpath = "github.com/epsxy/aurora/pkg/git",
     visibility = ["//visibility:public"],
 )

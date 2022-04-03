@@ -12,4 +12,4 @@
 bazel-bin
 bazel-out
 bazel-testlogs
-bazel-gommitizen
+bazel-aurora

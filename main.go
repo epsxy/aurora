@@ -1,6 +1,6 @@
 package main
 
-import "github.com/epsxy/gommitizen/pkg/cmd"
+import "github.com/epsxy/aurora/pkg/cmd"
 
 func main() {
 	cmd.Execute()
