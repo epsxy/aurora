@@ -1,4 +1,4 @@
-module github.com/epsxy/gommitizen
+module github.com/epsxy/aurora
 
 go 1.15
 
