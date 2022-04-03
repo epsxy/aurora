@@ -17,19 +17,19 @@ This type of installation is recommanded in the following cases:
 ## Clone the repository
 
 ```bash
-git clone git@github.com:epsxy/gommitizen.git
-cd gommitizen
+git clone git@github.com:epsxy/aurora.git
+cd aurora
 ```
 
 After, you can choose your option below:
 
 1. Building and running on the fly using go commands
-2. Installing gommitizen in Go special `bin` directory, under `$GOPATH/bin`
+2. Installing aurora in Go special `bin` directory, under `$GOPATH/bin`
 3. Build your own binary from sources and copy it to one your system bin directory (`/usr/bin` or `/usr/local/bin`).
 
 ## Build & run on-the-fly
 
-Build with `go build`, run with `go run`. Makefile rules are already defined in `gommitizen/Makefile`:
+Build with `go build`, run with `go run`. Makefile rules are already defined in `aurora/Makefile`:
 
 ```bash
 # Go run
@@ -37,7 +37,7 @@ make run
 
 # Build and run the generated binary
 make build
-./bin/gommitizen
+./bin/aurora
 ```
 
 ## Install in `$GOPATH/bin`
@@ -55,7 +55,7 @@ go install
 
 You should be ready to go now, the following command should work in your terminal:
 ```bash
-gommitizen
+aurora
 ```
 
 ### Troubleshooting
@@ -69,6 +69,6 @@ gommitizen
 The goal is to generate a binary and install it in a system directory, for example `/usr/local/bin/` for OSX users.
 
 ```bash
-go build -o ./bin/gommitizen main.go
-sudo cp ./bin/gommitizen /usr/local/bin/gommitizen
+go build -o ./bin/aurora main.go
+sudo cp ./bin/aurora /usr/local/bin/aurora
 ```

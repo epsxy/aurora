@@ -3,8 +3,8 @@ package prompt
 import (
 	"fmt"
 
-	"github.com/epsxy/gommitizen/pkg/git"
-	"github.com/epsxy/gommitizen/pkg/parser"
+	"github.com/epsxy/aurora/pkg/git"
+	"github.com/epsxy/aurora/pkg/parser"
 )
 
 //Changelog displays changelog generator prompt

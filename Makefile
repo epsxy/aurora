@@ -4,11 +4,11 @@ run:
 	go run main.go
 
 build:
-	go build -o ./bin/gommitizen main.go
+	go build -o ./bin/aurora main.go
 
 install:
-	go build -o ./bin/gommitizen main.go
-	sudo cp ./bin/gommitizen /usr/local/bin/gommitizen
+	go build -o ./bin/aurora main.go
+	sudo cp ./bin/aurora /usr/local/bin/aurora
 	sudo cp ./release/git-gz /usr/local/bin/git-gz
 	sudo chmod +x /usr/local/bin/git-gz
 
@@ -29,6 +29,6 @@ release-darwin-amd64: build-darwin-amd64
 	cp release/git-gz release/darwin-amd64
 	cp release/Makefile release/darwin-amd64
 	cp release/README.md release/darwin-amd64
-	cp bin/darwin-amd64 release/darwin-amd64/gommitizen
+	cp bin/darwin-amd64 release/darwin-amd64/aurora
 	tar -czvf release/darwin-amd64.tar.gz release/darwin-amd64
 	rm -rf release/darwin-amd64

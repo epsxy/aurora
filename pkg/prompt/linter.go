@@ -3,7 +3,7 @@ package prompt
 import (
 	"os"
 
-	"github.com/epsxy/gommitizen/pkg/git"
+	"github.com/epsxy/aurora/pkg/git"
 	"github.com/gookit/color"
 )
 

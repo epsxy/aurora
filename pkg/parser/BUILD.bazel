@@ -6,7 +6,7 @@ go_library(
         "changelog.go",
         "env.go",
     ],
-    importpath = "github.com/epsxy/gommitizen/pkg/parser",
+    importpath = "github.com/epsxy/aurora/pkg/parser",
     visibility = ["//visibility:public"],
     deps = [
         "//pkg/git",

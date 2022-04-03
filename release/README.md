@@ -1,6 +1,6 @@
 # Installation
 
-The installation process will copy the executable to `/usr/local/bin/gommitizen`. It will also create the alias `git gz`, using the file `/usr/local/bin/git-gz` and make it executable. You'll maybe need to source your bash after install: `source ~/.bashrc`, `source ~/.zshrc`, etc.
+The installation process will copy the executable to `/usr/local/bin/aurora`. It will also create the alias `git gz`, using the file `/usr/local/bin/git-gz` and make it executable. You'll maybe need to source your bash after install: `source ~/.bashrc`, `source ~/.zshrc`, etc.
 
 ```bash
 # Install

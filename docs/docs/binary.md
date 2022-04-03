@@ -8,19 +8,19 @@ slug: /installation/quickstart
 This type of installation is recommanded in the following cases:
 
 - You don't have Go installed on your computer
-- You want to use _Gommitizen_ out of the box
+- You want to use _Aurora_ out of the box
 - You're not interested in contributing nor cloning the repository
 
 ## How does it work?
 
-GoBinaries.com allows you to request an on-demand compilation from the latest tagged Gommitizen version. The binary is compiled on the fly and installed on your computer under for example `/usr/local/bin/gommitizen` for OSX users.
+GoBinaries.com allows you to request an on-demand compilation from the latest tagged Aurora version. The binary is compiled on the fly and installed on your computer under for example `/usr/local/bin/aurora` for OSX users.
 
 ## Installation
 
 ### Latest version
 
 ```bash
-curl -sf https://gobinaries.com/epsxy/gommitizen | sh
+curl -sf https://gobinaries.com/epsxy/aurora | sh
 ```
 
 ### Specific version
@@ -28,20 +28,20 @@ curl -sf https://gobinaries.com/epsxy/gommitizen | sh
 To install version `vX.Y.Z`
 
 ```bash
-curl -sf https://gobinaries.com/epsxy/gommitizen@X.Y.Z | sh
+curl -sf https://gobinaries.com/epsxy/aurora@X.Y.Z | sh
 ```
 
 ## After-install checks
 
-You can type `gommitizen` in your terminal. The following output should show up:
+You can type `aurora` in your terminal. The following output should show up:
 
 ```bash
-gommitizen
+aurora
 
 A Go program to help you create conventional commits
 
 Usage:
-  gommitizen [command]
+  aurora [command]
 
 Available Commands:
   changelog   Run changelog generator
@@ -50,7 +50,7 @@ Available Commands:
   lint        Run commit linter
 
 Flags:
-  -h, --help   help for gommitizen
+  -h, --help   help for aurora
 
-Use "gommitizen [command] --help" for more information about a command.
+Use "aurora [command] --help" for more information about a command.
 ```

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/epsxy/gommitizen/pkg/prompt"
+	"github.com/epsxy/aurora/pkg/prompt"
 	"github.com/spf13/cobra"
 )
 
@@ -12,9 +12,9 @@ var Changelog = &cobra.Command{
 	Long: `
 Generate a changelog between git revisions.
 Supported syntax for example:
-	- gommitizen changelog v1.0.0
-	- gommitizen changelog feat-branch-1 master
-	- gommitizen changelog 0e4bc1a 7e1abc8
+	- aurora changelog v1.0.0
+	- aurora changelog feat-branch-1 master
+	- aurora changelog 0e4bc1a 7e1abc8
 	`,
 	Args: cobra.RangeArgs(1, 2),
 	Run: func(cmd *cobra.Command, args []string) {

@@ -7,19 +7,19 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/epsxy/gommitizen/pkg/git"
+	"github.com/epsxy/aurora/pkg/git"
 	"gopkg.in/yaml.v2"
 )
 
-//GommitizenConf : .yaml configuration file struct
-type GommitizenConf struct {
+//AuroraConf : .yaml configuration file struct
+type AuroraConf struct {
 	Types  []string `yaml:"types,flow"`
 	Scopes []string `yaml:"scopes,flow"`
 }
 
 func parseEnvFilePath() string {
 	path := git.ShowTopLevel()
-	return filepath.Join(strings.Replace(path, "\n", "", 1), ".gommitizen.yml")
+	return filepath.Join(strings.Replace(path, "\n", "", 1), ".aurora.yml")
 }
 
 func ParseHomeFilePath() string {
@@ -27,11 +27,11 @@ func ParseHomeFilePath() string {
 	if err != nil {
 		return ""
 	}
-	return filepath.Join(h, ".gommitizen.yml")
+	return filepath.Join(h, ".aurora.yml")
 }
 
-//EnvFileParser : parse gommitizen env files
-func GetConf() *GommitizenConf {
+//EnvFileParser : parse aurora env files
+func GetConf() *AuroraConf {
 	log.Printf("parsing env file")
 
 	p := parseEnvFilePath()
@@ -46,11 +46,11 @@ func GetConf() *GommitizenConf {
 		return c
 	}
 
-	return &GommitizenConf{Scopes: nil, Types: nil}
+	return &AuroraConf{Scopes: nil, Types: nil}
 }
 
-func readConfFromPath(path string) (*GommitizenConf, error) {
-	var conf *GommitizenConf
+func readConfFromPath(path string) (*AuroraConf, error) {
+	var conf *AuroraConf
 
 	f, err := ioutil.ReadFile(path)
 	if err != nil {

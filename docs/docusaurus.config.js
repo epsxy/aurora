@@ -1,17 +1,17 @@
 module.exports = {
-  title: 'Gommitizen',
+  title: 'Aurora',
   tagline: 'A git utility written in go',
-  url: 'https://gommitizen.epsxy.xyz',
+  url: 'https://aurora.epsxy.xyz',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'epsxy', // Usually your GitHub org/user name.
-  projectName: 'gommitizen', // Usually your repo name.
+  projectName: 'aurora', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Gommitizen',
+      title: 'Aurora',
       logo: {
-        alt: 'Gommitizen Logo',
+        alt: 'Aurora Logo',
         src: 'img/logo.png',
       },
       items: [
@@ -22,7 +22,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/epsxy/gommitizen',
+          href: 'https://github.com/epsxy/aurora',
           label: 'GitHub',
           position: 'right',
         },
@@ -49,12 +49,12 @@ module.exports = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/epsxy/gommitizen',
+              href: 'https://github.com/epsxy/aurora',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Gommitizen. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Aurora. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -65,7 +65,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/epsxy/gommitizen/edit/master/',
+            'https://github.com/epsxy/aurora/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

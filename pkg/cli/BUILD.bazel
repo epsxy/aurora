@@ -8,7 +8,7 @@ go_library(
         "input.go",
         "select.go",
     ],
-    importpath = "github.com/epsxy/gommitizen/pkg/cli",
+    importpath = "github.com/epsxy/aurora/pkg/cli",
     visibility = ["//visibility:public"],
     deps = ["@com_github_manifoldco_promptui//:promptui"],
 )

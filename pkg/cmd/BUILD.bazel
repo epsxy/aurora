@@ -8,7 +8,7 @@ go_library(
         "linter.go",
         "root.go",
     ],
-    importpath = "github.com/epsxy/gommitizen/pkg/cmd",
+    importpath = "github.com/epsxy/aurora/pkg/cmd",
     visibility = ["//visibility:public"],
     deps = [
         "//pkg/git",

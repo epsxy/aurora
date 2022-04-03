@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/epsxy/gommitizen/pkg/git"
+	"github.com/epsxy/aurora/pkg/git"
 )
 
 //GenerateMarkdownChangelog generates a markdown-formatted string containing

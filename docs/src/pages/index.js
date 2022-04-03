@@ -11,7 +11,7 @@ const features = [
     title: 'Commit formatter and linter',
     description: (
       <>
-        Gommitizen helps you writing commits respecting the conventional commits spec. 
+        Aurora helps you writing commits respecting the conventional commits spec. 
         It also allows you to lint the previous ones.
       </>
     ),
@@ -20,7 +20,7 @@ const features = [
     title: 'Changelog generation',
     description: (
       <>
-        Gommitizen can generate a markdown formmatted changelog on-demand when 
+        Aurora can generate a markdown formmatted changelog on-demand when 
         you want to release a new version of your software.
       </>
     ),
@@ -29,7 +29,7 @@ const features = [
     title: 'Cross platform',
     description: (
       <>
-        Gommitizen is written in Go and thus is available on your platform. 
+        Aurora is written in Go and thus is available on your platform. 
         OSX, Linux and Windows are supported. 
       </>
     ),
