@@ -1,0 +1,193 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 70
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 15
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: aurora commit
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "JetBrains Mono, Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 13
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1000
+    content: "\e[H\e[2J\e[0m\e[27m\e[24m\e[J\e[01;32m➜  \e[36maurora\e[00m \e[01;34mgit:(\e[31mmaster\e[34m)\e[33m\e[00m \e[K"
+  - delay: 712
+    content: a
+  - delay: 100
+    content: u
+  - delay: 100
+    content: r
+  - delay: 100
+    content: o
+  - delay: 100
+    content: r
+  - delay: 100
+    content: a
+  - delay: 200
+    content: ' '
+  - delay: 200
+    content: c
+  - delay: 100
+    content: o
+  - delay: 100
+    content: m
+  - delay: 100
+    content: m
+  - delay: 100
+    content: i
+  - delay: 100
+    content: t
+  - delay: 100
+    content: "\e[?1l\e>\e[?2004l\r\r\n\e]2;aurora commit\a\e]1;aurora\a"
+  - delay: 100
+    content: "No file staged for commit\r\n\e[?25l\e[2K\r\e[2mUse the arrow keys to navigate:\e[0m \e[2m↓\e[0m \e[2m↑\e[0m \e[2m→\e[0m \e[2m←\e[0m \r\n\e[2K\r\e[34m?\e[0m Stage all files: \r\n\e[2K\r  \e[1m▸\e[0m \e[4mYes\e[0m\r\n\e[2K\r    No\r\n\e[J\e[2K\r \b"
+  - delay: 500
+    content: "\e[J\e[2K\r \b\e[J\e[2K\r \b\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[2K\r\e[32m\e[32m✔\e[0m \e[2mYes\e[0m\r\n\e[?25h\e[J\e[2K\r"
+  - delay: 500
+    content: "\e[?25l\e[2K\r\e[2mUse the arrow keys to navigate:\e[0m \e[2m↓\e[0m \e[2m↑\e[0m \e[2m→\e[0m \e[2m←\e[0m \r\n\e[2K\r\e[34m?\e[0m Commit type: \r\n\e[2K\r  \e[1m▸\e[0m \e[4mfeat\e[0m\r\n\e[2K\r    fix\r\n\e[2K\r    build\r\n\e[2K\r    chore\r\n\e[2K\r↓   ci\r\n\e[J\e[2K\r \b"
+  - delay: 500
+    content: "\e[J\e[2K\r \b\e[J\e[2K\r \b"
+  - delay: 500
+    content: "\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[2K\r\e[32m\e[32m✔\e[0m \e[2mfeat\e[0m\r\n\e[?25h\e[J\e[2K\r\e[?25l\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit scope\e[0m\e[1m:\e[0m █\r\n\e[J\e[2K\r \b"
+  - delay: 1200
+    content: "\e[J\e[2K\r \b\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit scope\e[0m\e[1m:\e[0m █\r\n\e[1A\e[2K\r\e[2K\r\e[2mCommit scope\e[0m\e[2m:\e[0m \r\n\e[?25h\e[?25l\e[2K\r\e[2mUse the arrow keys to navigate:\e[0m \e[2m↓\e[0m \e[2m↑\e[0m \e[2m→\e[0m \e[2m←\e[0m \r\n\e[2K\r\e[34m?\e[0m Breaking change: \r\n\e[2K\r  \e[1m▸\e[0m \e[4mNo\e[0m\r\n\e[2K\r    Yes\r\n\e[J\e[2K\r \b"
+  - delay: 1000
+    content: "\e[J\e[2K\r \b\e[J\e[2K\r \b\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[1A\e[2K\r\e[2K\r\e[32m\e[32m✔\e[0m \e[2mNo\e[0m\r\n\e[?25h\e[J\e[2K\r\e[?25l\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m █\r\n\e[J\e[2K\r \b"
+  - delay: 1000
+    content: "\e[J\e[2K\ra\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m a█\r\na\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rd\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m ad█\r\nd\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rd\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add█\r\nd\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\r \e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add █\r\n \e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rf\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add f█\r\nf\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\ri\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add fi█\r\ni\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rr\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add fir█\r\nr\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rs\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add firs█\r\ns\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rt\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first█\r\nt\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\r \e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first █\r\n \e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rf\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first f█\r\nf\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\re\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first fe█\r\ne\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\ra\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first fea█\r\na\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rt\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first feat█\r\nt\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\ru\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first featu█\r\nu\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\rr\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first featur█\r\nr\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\re\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first feature█\r\ne\e[J\e[2K\r \b"
+  - delay: 100
+    content: "\e[J\e[2K\r \b\e[J\e[2K\r\e[1A\e[2K\r\e[2K\r\e[1m\e[32m✔\e[0m \e[1mCommit short message\e[0m\e[1m:\e[0m add first feature█\r\n\e[1A\e[2K\r\e[2K\r\e[2mCommit short message\e[0m\e[2m:\e[0m add first feature\r\n\e[?25h"
+  - delay: 64
+    content: "[master b3485f8] feat: add first feature\r\n 1 file changed, 1 insertion(+)\r\n create mode 100644 toto.md\r\n"
+  - delay: 1000
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[01;32m➜  \e[36maurora\e[00m \e[01;34mgit:(\e[31mmaster\e[34m)\e[00m \e[K\e[?1h\e=\e[?2004h"
