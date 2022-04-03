@@ -8,8 +8,8 @@ import (
 )
 
 var root = &cobra.Command{
-	Use:     "gommitizen",
-	Short:   "Gommitizen is a commit formatter utility",
+	Use:     "aurora",
+	Short:   "Aurora is a commit formatter utility",
 	Long:    "A Go program to help you create conventional commits",
 	Version: "v0.1.2",
 }

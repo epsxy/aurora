@@ -8,8 +8,5 @@ go_library(
     ],
     importpath = "github.com/epsxy/gommitizen/pkg/parser",
     visibility = ["//visibility:public"],
-    deps = [
-        "//pkg/git",
-        "@in_gopkg_yaml_v2//:yaml_v2",
-    ],
+    deps = ["@in_gopkg_yaml_v2//:yaml_v2"],
 )

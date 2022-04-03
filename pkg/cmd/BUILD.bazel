@@ -10,9 +10,5 @@ go_library(
     ],
     importpath = "github.com/epsxy/gommitizen/pkg/cmd",
     visibility = ["//visibility:public"],
-    deps = [
-        "//pkg/git",
-        "//pkg/prompt",
-        "@com_github_spf13_cobra//:cobra",
-    ],
+    deps = ["@com_github_spf13_cobra//:cobra"],
 )

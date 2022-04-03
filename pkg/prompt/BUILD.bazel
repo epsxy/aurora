@@ -9,10 +9,5 @@ go_library(
     ],
     importpath = "github.com/epsxy/gommitizen/pkg/prompt",
     visibility = ["//visibility:public"],
-    deps = [
-        "//pkg/cli",
-        "//pkg/git",
-        "//pkg/parser",
-        "@com_github_gookit_color//:color",
-    ],
+    deps = ["@com_github_gookit_color//:color"],
 )

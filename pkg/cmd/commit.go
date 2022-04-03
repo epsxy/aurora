@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/epsxy/gommitizen/pkg/git"
-	"github.com/epsxy/gommitizen/pkg/prompt"
+	"github.com/epsxy/aurora/pkg/git"
+	"github.com/epsxy/aurora/pkg/prompt"
 	"github.com/spf13/cobra"
 )
 

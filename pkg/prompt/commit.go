@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/epsxy/gommitizen/pkg/cli"
-	"github.com/epsxy/gommitizen/pkg/git"
-	"github.com/epsxy/gommitizen/pkg/parser"
+	"github.com/epsxy/aurora/pkg/cli"
+	"github.com/epsxy/aurora/pkg/git"
+	"github.com/epsxy/aurora/pkg/parser"
 )
 
 type commitsConf struct {
@@ -14,7 +14,7 @@ type commitsConf struct {
 	Scopes []string `yaml:"scopes,flow"`
 }
 
-// Commit : gommitizen commit prompt
+// Commit : aurora commit prompt
 func Commit() string {
 
 	if git.AreChangesAddedToBeCommited() == false {

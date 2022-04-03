@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/epsxy/gommitizen/pkg/prompt"
+	"github.com/epsxy/aurora/pkg/prompt"
 	"github.com/spf13/cobra"
 )
 
@@ -12,9 +12,9 @@ var Lint = &cobra.Command{
 	Long: `
 Lint commits between git revisions.
 Supported syntax for example:
-	- gommitizen lint v1.0.0
-	- gommitizen lint feat-branch-1 master
-	- gommitizen lint 0e4bc1a 7e1abc8
+	- aurora lint v1.0.0
+	- aurora lint feat-branch-1 master
+	- aurora lint 0e4bc1a 7e1abc8
 	`,
 	Args: cobra.RangeArgs(1, 2),
 	Run: func(cmd *cobra.Command, args []string) {
