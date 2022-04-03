@@ -1,4 +1,4 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
     name = "parser",
@@ -12,4 +12,11 @@ go_library(
         "//pkg/git",
         "@in_gopkg_yaml_v2//:yaml_v2",
     ],
+)
+
+go_test(
+    name = "parser_test",
+    srcs = ["changelog_test.go"],
+    embed = [":parser"],
+    deps = ["//pkg/git"],
 )
