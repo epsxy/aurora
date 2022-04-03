@@ -27,7 +27,7 @@ func Commit() string {
 		}
 	}
 
-	conf := parser.EnvFileParser()
+	conf := parser.GetConf()
 
 	types := conf.Types
 	if types == nil {

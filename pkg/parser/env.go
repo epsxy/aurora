@@ -3,6 +3,7 @@ package parser
 import (
 	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -18,24 +19,48 @@ type GommitizenConf struct {
 
 func parseEnvFilePath() string {
 	path := git.ShowTopLevel()
-	return strings.Replace(path, "\n", "", 1)
+	return filepath.Join(strings.Replace(path, "\n", "", 1), ".gommitizen.yml")
 }
 
-//EnvFileParser : parse gommitizen env file
-func EnvFileParser() GommitizenConf {
-	var conf GommitizenConf
-	path := parseEnvFilePath()
-	s := filepath.Join(path, ".gommitizen.yml")
-
-	yamlFile, err := ioutil.ReadFile(s)
+func ParseHomeFilePath() string {
+	h, err := os.UserHomeDir()
 	if err != nil {
-		return GommitizenConf{Scopes: nil, Types: nil}
+		return ""
+	}
+	return filepath.Join(h, ".gommitizen.yml")
+}
+
+//EnvFileParser : parse gommitizen env files
+func GetConf() *GommitizenConf {
+	log.Printf("parsing env file")
+
+	p := parseEnvFilePath()
+	c, err := readConfFromPath(p)
+	if err != nil && c != nil {
+		return c
 	}
 
-	err = yaml.Unmarshal(yamlFile, &conf)
-	if err != nil {
-		log.Printf("Malformed gommitizen configuration file: %v", err)
-		return GommitizenConf{Scopes: nil, Types: nil}
+	p = ParseHomeFilePath()
+	c, err = readConfFromPath(p)
+	if err != nil && c != nil {
+		return c
 	}
-	return conf
+
+	return &GommitizenConf{Scopes: nil, Types: nil}
+}
+
+func readConfFromPath(path string) (*GommitizenConf, error) {
+	var conf *GommitizenConf
+
+	f, err := ioutil.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	err = yaml.Unmarshal(f, &conf)
+	if err != nil {
+		return nil, err
+	}
+
+	return conf, nil
 }
