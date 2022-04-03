@@ -7,17 +7,17 @@ slug: /features/commit/formatter
 
 ![Commit CLI gif](../static/img/gif/commit.gif)
 
-Gommitizen allows you to create commits respecting the conventional commits spec.
+Aurora allows you to create commits respecting the conventional commits spec.
 
 ## Command
 
 ```bash
-gommitizen commit
+aurora commit
 ```
 
 ## Description
 
-Gommitizen helps you formatting commits matching the following form
+Aurora helps you formatting commits matching the following form
 
 ```
 <TYPE>([OPTIONAL_SCOPE])[OPTIONAL_!]: <COMMIT_MESSAGE>

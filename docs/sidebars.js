@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    Gommitizen: ['intro', 'contributing'],
+    Aurora: ['intro', 'contributing'],
     "Getting started": ['quickstart', 'advanced'],
     Features: ['commit-formatter', 'commit-linter', 'changelog', 'conf-file'],
   },
