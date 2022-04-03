@@ -1,7 +1,7 @@
-# gommitizen
+# aurora
 
-![go report card](https://goreportcard.com/badge/github.com/epsxy/gommitizen)
-![ci](https://travis-ci.org/epsxy/gommitizen.svg?branch=master&status=passed)
+![go report card](https://goreportcard.com/badge/github.com/epsxy/aurora)
+![ci](https://travis-ci.org/epsxy/aurora.svg?branch=master&status=passed)
 
 ![logo](logo.png)
 
@@ -34,7 +34,7 @@ ci: add an e2e tests step
 - [x] Add .env file to customize params
 - [x] Release v1.0
 - [x] Add installation and usage documentation
-- [x] Propose to `git add -A` if running gommitizen without any file added
+- [x] Propose to `git add -A` if running aurora without any file added
 - [ ] Support more custom params (commit length, etc)
 - [ ] Add tests
 - [ ] Add cross platform builds to releases
@@ -57,21 +57,21 @@ make run
 
 ## From gobinaries
 
-You can install Gommitizen without using or installing go by downloading it from gobinaries.com.
+You can install aurora without using or installing go by downloading it from gobinaries.com.
 
 ```
-curl -sf https://gobinaries.com/epsxy/gommitizen | sh
+curl -sf https://gobinaries.com/epsxy/aurora | sh
 ```
 
-Typing `gommitizen` in a terminal should work now:
+Typing `aurora` in a terminal should work now:
 
 ```
-> gommitizen
+> aurora
 
 A Go program to help you create conventional commits
 
 Usage:
-  gommitizen [command]
+  aurora [command]
 
 Available Commands:
   changelog   Run changelog generator
@@ -79,9 +79,9 @@ Available Commands:
   help        Help about any command
 
 Flags:
-  -h, --help   help for gommitizen
+  -h, --help   help for aurora
 
-Use "gommitizen [command] --help" for more information about a command.
+Use "aurora [command] --help" for more information about a command.
 ```
 
 ## From source
@@ -100,7 +100,7 @@ go install
 
 - You should be ready to go now, the following command should work in your terminal:
 ```bash
-gommitizen
+aurora
 ```
 
 Troubleshooting:
@@ -110,13 +110,13 @@ Troubleshooting:
 
 # Usage
 
-You have to be in a git repository, otherwise gommitizen will return and error and close itself. You have to git add the files **before** launching gommitizen. Type `gommitizen` in a shell at your repository's path and follow the indications to proceed in formatting your commit message.
+You have to be in a git repository, otherwise aurora will return and error and close itself. You have to git add the files **before** launching aurora. Type `aurora` in a shell at your repository's path and follow the indications to proceed in formatting your commit message.
 
-Gommitizen will basically `git commit -m [message]` with a nicely formatted message you will create using the CLI.
+aurora will basically `git commit -m [message]` with a nicely formatted message you will create using the CLI.
 
 # Configuration file
 
-You can set up your custom commit scopes and types in a configuration file at the route of your repository. Create a `.gommitizen.yml` file matching the following structure:
+You can set up your custom commit scopes and types in a configuration file at the route of your repository. Create a `.aurora.yml` file matching the following structure:
 
 ```yaml
 types:
@@ -138,13 +138,13 @@ scopes:
     - second
 ```
 
-This file can be present, present partially, or absent. If the file or one of its option is missing, the default parameters will apply. This repository contains a `.gommitizen.yml` example file.
+This file can be present, present partially, or absent. If the file or one of its option is missing, the default parameters will apply. This repository contains a `.aurora.yml` example file.
 
 # Bazel
 
 ```
-bazel build //:gommitizen
-bazel run //:gommitizen
+bazel build //:aurora
+bazel run //:aurora
 
 ```
 
