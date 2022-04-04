@@ -7,7 +7,7 @@
 
 ![logo](logo.png)
 
-![demo](commit.gif)
+![demo](docs/static/img/gif/commit.gif)
 
 A simple cross platform git commit CLI. Inspired from [commitizen](https://github.com/commitizen/cz-cli) and using the amazing [promptui](https://github.com/manifoldco/promptui) library.
 
@@ -57,15 +57,17 @@ make run
 
 # Installation
 
-## From gobinaries
+## /NEW/ From Goblin
 
-You can install aurora without using or installing go by downloading it from gobinaries.com.
+![demo](docs/static/img/gif/install.gif)
 
-```
-curl -sf https://gobinaries.com/epsxy/aurora | sh
-```
+[Goblin.reaper](https://goblin.reaper.im/#intro) provides on-demand go binaries (as long as the service is maintained). You can install `aurora` with
 
-Typing `aurora` in a terminal should work now:
+ ```
+curl -sf https://goblin.reaper.im/github.com/epsxy/aurora | sh
+ ```
+
+ Typing `aurora` in a terminal should work now:
 
 ```
 > aurora
@@ -84,6 +86,15 @@ Flags:
   -h, --help   help for aurora
 
 Use "aurora [command] --help" for more information about a command.
+```
+
+## /DEPRECATED/ From gobinaries
+**As of 04/2022, GoBinaries doesn't work anymore, because its Go version is too low**
+
+You can install aurora without using or installing go by downloading it from gobinaries.com.
+
+```
+curl -sf https://gobinaries.com/epsxy/aurora | sh
 ```
 
 ## From source
