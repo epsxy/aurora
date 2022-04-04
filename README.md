@@ -104,6 +104,13 @@ make install
 
 To uninstall, use `make uninstall`.
 
+You can also install/uninstall the git utilities with the following commands, which copy the tool to `usr/local/bin/git-aur`
+
+```
+make install-git
+make uninstall-git
+```
+
 ### Legacy (w/ go install)
 **Not recommended**
 
@@ -164,8 +171,12 @@ This file can be present, present partially, or absent. If the file or one of it
 # Bazel
 
 ```
+# build
 bazel build //:aurora
-bazel run //:aurora
+# test all
+bazel test --test_output=errors //...
+# run with flags
+bazel run //:aurora -- --help
 ```
 
 # Licence
