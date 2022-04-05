@@ -14,6 +14,7 @@ go_library(
 
 go_binary(
     name = "aurora",
+    data = ["VERSION"],
     embed = [":aurora_lib"],
     visibility = ["//visibility:public"],
 )
