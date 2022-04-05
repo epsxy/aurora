@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/epsxy/aurora/pkg/git"
+	"github.com/epsxy/aurora/pkg/global"
 	"gopkg.in/yaml.v2"
 )
 
@@ -22,9 +23,12 @@ func parseEnvFilePath() string {
 	return filepath.Join(strings.Replace(path, "\n", "", 1), ".aurora.yml")
 }
 
-func ParseHomeFilePath() string {
+func parseHomeFilePath() string {
 	h, err := os.UserHomeDir()
 	if err != nil {
+		if global.GetVerbose() {
+			log.Println("error while getting home dir")
+		}
 		return ""
 	}
 	return filepath.Join(h, ".aurora.yml")
@@ -32,18 +36,26 @@ func ParseHomeFilePath() string {
 
 //EnvFileParser : parse aurora env files
 func GetConf() *AuroraConf {
-	log.Printf("parsing env file")
+	if global.GetVerbose() {
+		log.Printf("parsing env file")
+	}
 
 	p := parseEnvFilePath()
 	c, err := readConfFromPath(p)
 	if err != nil && c != nil {
 		return c
 	}
+	if global.GetVerbose() {
+		log.Println("no conf file was found in repo, defaulting to ~/")
+	}
 
-	p = ParseHomeFilePath()
+	p = parseHomeFilePath()
 	c, err = readConfFromPath(p)
 	if err != nil && c != nil {
 		return c
+	}
+	if global.GetVerbose() {
+		log.Println("no conf file was found in home, defaulting to empty")
 	}
 
 	return &AuroraConf{Scopes: nil, Types: nil}

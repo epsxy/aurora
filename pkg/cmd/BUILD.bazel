@@ -12,6 +12,7 @@ go_library(
     visibility = ["//visibility:public"],
     deps = [
         "//pkg/git",
+        "//pkg/global",
         "//pkg/prompt",
         "@com_github_spf13_cobra//:cobra",
     ],
