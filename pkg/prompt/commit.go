@@ -16,6 +16,7 @@ type commitsConf struct {
 
 // Commit : aurora commit prompt
 func Commit() string {
+	conf := parser.GetConf()
 
 	if git.AreChangesAddedToBeCommited() == false {
 		fmt.Println("No file staged for commit")
@@ -26,8 +27,6 @@ func Commit() string {
 			log.Fatal("Staging no file. Aborted.")
 		}
 	}
-
-	conf := parser.GetConf()
 
 	types := conf.Types
 	if types == nil {
