@@ -26,6 +26,7 @@ func Execute() {
 
 	// add commands and flags
 	root.AddCommand(Commit, Changelog, Lint)
+	root.PersistentFlags().Bool("dry-run", false, "enable dry-run mode")
 	root.PersistentFlags().Bool("verbose", false, "enable verbose mode")
 
 	if err := root.Execute(); err != nil {
