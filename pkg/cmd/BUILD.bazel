@@ -6,6 +6,7 @@ go_library(
         "changelog.go",
         "commit.go",
         "linter.go",
+        "release.go",
         "root.go",
     ],
     importpath = "github.com/epsxy/aurora/pkg/cmd",

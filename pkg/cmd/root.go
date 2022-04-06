@@ -25,7 +25,8 @@ func Execute() {
 	root.Version = string(version)
 
 	// add commands and flags
-	root.AddCommand(Commit, Changelog, Lint)
+	root.AddCommand(Commit, Changelog, Lint, Release)
+	Release.AddCommand(Major, Minor, Fix)
 	root.PersistentFlags().Bool("dry-run", false, "enable dry-run mode")
 	root.PersistentFlags().Bool("verbose", false, "enable verbose mode")
 
