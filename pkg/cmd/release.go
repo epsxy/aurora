@@ -59,6 +59,7 @@ func releaseNewVersion(isMajor bool, isMinor bool, isFix bool) {
 	// TODO: Add template in conf file for this type of commit?
 	git.AddFile(versionFilePath)
 	git.CreateCommit(fmt.Sprintf("chore: release %s", newSemVer))
+	git.TagCommit(newSemVer)
 }
 
 var Major = &cobra.Command{
