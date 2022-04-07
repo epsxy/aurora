@@ -49,6 +49,9 @@ Basically, when running a `release` process with aurora, the CLI will:
 - Increment your version to the next one dependening on the command (see next section for the algorithm)
 - Save the new version file
 - Commit this update in a release commit with the following commit message: `chore: release ${VERSION}` (with, `${VERSION}` the new computed version number, eg `v1.2.3`)
+- Tag this release commit with the new computed version number
+
+You will just have to push the last commit and the last tag with `git push && git push --tags`.
 
 ## Behavior
 
