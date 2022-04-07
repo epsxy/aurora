@@ -15,3 +15,12 @@ func AddAll() {
 		log.Fatal(err)
 	}
 }
+
+func AddFile(path string) {
+	cmd := exec.Command("git", "add", path)
+	_, err := cmd.Output()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+}

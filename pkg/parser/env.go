@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/epsxy/aurora/pkg/git"
 	"github.com/epsxy/aurora/pkg/global"
@@ -20,7 +19,7 @@ type AuroraConf struct {
 
 func parseEnvFilePath() string {
 	path := git.ShowTopLevel()
-	return filepath.Join(strings.Replace(path, "\n", "", 1), ".aurora.yml")
+	return filepath.Join(path, ".aurora.yml")
 }
 
 func parseHomeFilePath() string {

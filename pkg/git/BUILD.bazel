@@ -7,6 +7,7 @@ go_library(
         "commit.go",
         "log.go",
         "status.go",
+        "tag.go",
         "top_level.go",
     ],
     importpath = "github.com/epsxy/aurora/pkg/git",

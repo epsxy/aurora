@@ -3,6 +3,7 @@ package git
 import (
 	"log"
 	"os/exec"
+	"strings"
 )
 
 // ShowTopLevel runs `git rev-parse --show-toplevel` command.
@@ -14,5 +15,6 @@ func ShowTopLevel() string {
 	if err != nil {
 		log.Fatal("Unable to retrieve repository path.\nAre you in a git repository?\nAborting...")
 	}
-	return string(out)
+	// remove trailing `\n` and return
+	return strings.Replace(string(out), "\n", "", 1)
 }
