@@ -127,5 +127,5 @@ var Fix = &cobra.Command{
 var Release = &cobra.Command{
 	Use:   "release",
 	Short: "Handle releases",
-	Long:  "Create a commit following conventional commits convention",
+	Long:  "Create a new release following (partially) the SemVer spec (vX.X.X format)",
 }
