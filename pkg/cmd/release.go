@@ -14,6 +14,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+//TODO: Support full SemVer spec? vX.X.X-yyyy+zzzz?
 func releaseNewVersion(isMajor bool, isMinor bool, isFix bool) {
 	// Steps
 	// 1. get current version from VERSION file located at the root of the repo
