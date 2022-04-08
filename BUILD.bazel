@@ -7,6 +7,7 @@ gazelle(name = "gazelle")
 go_library(
     name = "aurora_lib",
     srcs = ["main.go"],
+    embedsrcs = ["VERSION"],
     importpath = "github.com/epsxy/aurora",
     visibility = ["//visibility:private"],
     deps = ["//pkg/cmd"],
@@ -14,7 +15,6 @@ go_library(
 
 go_binary(
     name = "aurora",
-    data = ["VERSION"],
     embed = [":aurora_lib"],
     visibility = ["//visibility:public"],
 )
