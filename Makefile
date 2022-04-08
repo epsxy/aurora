@@ -3,6 +3,9 @@
 run:
 	go run main.go
 
+test:
+	bazel test --test_output=errors //...
+
 build:
 	go build -o ./bin/aurora main.go
 

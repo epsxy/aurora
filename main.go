@@ -1,7 +1,14 @@
 package main
 
-import "github.com/epsxy/aurora/pkg/cmd"
+import _ "embed"
+
+import (
+	"github.com/epsxy/aurora/pkg/cmd"
+)
+
+//go:embed VERSION
+var version string
 
 func main() {
-	cmd.Execute()
+	cmd.Execute(version)
 }
