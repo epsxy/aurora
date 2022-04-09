@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"github.com/epsxy/aurora/pkg/global"
 	"github.com/epsxy/aurora/pkg/prompt"
 	"github.com/spf13/cobra"
 )
@@ -19,11 +18,7 @@ Supported syntax for example:
 	`,
 	Args: cobra.RangeArgs(1, 2),
 	Run: func(cmd *cobra.Command, args []string) {
-		v, err := cmd.Flags().GetBool("verbose")
-		if err != nil {
-			v = false
-		}
-		global.SetVerbose(v)
+		SetGlobalFlags(cmd)
 
 		f := ""
 		s := ""

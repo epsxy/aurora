@@ -66,17 +66,7 @@ var Major = &cobra.Command{
 	Use:   "major",
 	Short: "Major release",
 	Run: func(cmd *cobra.Command, args []string) {
-		v, err := cmd.Flags().GetBool("verbose")
-		if err != nil {
-			v = false
-		}
-		global.SetVerbose(v)
-
-		d, err := cmd.Flags().GetBool("dry-run")
-		if err != nil {
-			d = false
-		}
-		global.SetDryRun(d)
+		SetGlobalFlags(cmd)
 
 		releaseNewVersion(true, false, false)
 		return
@@ -87,17 +77,7 @@ var Minor = &cobra.Command{
 	Use:   "minor",
 	Short: "Minor release",
 	Run: func(cmd *cobra.Command, args []string) {
-		v, err := cmd.Flags().GetBool("verbose")
-		if err != nil {
-			v = false
-		}
-		global.SetVerbose(v)
-
-		d, err := cmd.Flags().GetBool("dry-run")
-		if err != nil {
-			d = false
-		}
-		global.SetDryRun(d)
+		SetGlobalFlags(cmd)
 
 		releaseNewVersion(false, true, false)
 		return
@@ -108,17 +88,7 @@ var Fix = &cobra.Command{
 	Use:   "fix",
 	Short: "Fix release",
 	Run: func(cmd *cobra.Command, args []string) {
-		v, err := cmd.Flags().GetBool("verbose")
-		if err != nil {
-			v = false
-		}
-		global.SetVerbose(v)
-
-		d, err := cmd.Flags().GetBool("dry-run")
-		if err != nil {
-			d = false
-		}
-		global.SetDryRun(d)
+		SetGlobalFlags(cmd)
 
 		releaseNewVersion(false, false, true)
 		return
